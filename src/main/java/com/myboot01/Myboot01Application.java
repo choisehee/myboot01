@@ -11,7 +11,10 @@ import org.springframework.context.annotation.ComponentScan;
 //@SpringBootConfiguration
 //@EnableAutoConfiguration
 
-//@Con
+//@ComponentScan 이 어노테이션은 기본적으로 main()메소드가 포함된 Myboot01Application 클래스가 속해있는 패키지(com.myboot01)를 베이스 패키지로 하여 빈 등록을 처리
+//즉 루트 패키지(com.myboot01)가 아닌 다른 패키지에 클래스를 작성하면 스프링 컨테이너는 해당 클래스를 빈으로 등록하지 않게 된다.
+//@ComponentScan(excludeFilters = { @Filter(type = FilterType.CUSTOM, classes = TypeExcludeFilter.class),
+//		@Filter(type = FilterType.CUSTOM, classes = AutoConfigurationExcludeFilter.class) })
 
 @SpringBootApplication // 이 클래스가 스프링 부트로 만든 애플리케이션의 시작 크래스임을 의미
 @ComponentScan(basePackages = {"com.myboot01","com.ruby"})
